@@ -24,6 +24,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @EnableBatchProcessing
 public class BatchConfig {
 
+    public static String tableName = "all_beauty";
 
     @Autowired
     public JobBuilderFactory jobBuilderFactory;
@@ -34,7 +35,7 @@ public class BatchConfig {
 
     @Bean
     public ItemReader<JsonNode> itemReader() {
-        return new JsonFileReader("/home/java/meta_Clothing_Shoes_and_Jewelry.json");
+        return new JsonFileReader("file:src/main/resources/newdata/meta_All_Beauty.json");
     }
 
     @Bean
@@ -68,8 +69,8 @@ public class BatchConfig {
     @Bean
     public TaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(4);
-        executor.setMaxPoolSize(8);
+        executor.setCorePoolSize(6);
+        executor.setMaxPoolSize(12);
         executor.setQueueCapacity(20);
         return executor;
     }
