@@ -38,4 +38,8 @@ And, of course, always try to make the system run as fast as possible.
 
 此时再配置aw04，仿照JD文件中读取京东资源库的方式，再次建立起与本地数据库的连接，将数据读取并保存到product中即可。但是我在此处遇到了一些问题无法解决，即我认为我的本地数据库中数据格式没问题，也能够正确的读取数据，但加载网页只会显示五个商品并且编译器开始报关于index.html的错误。由于本人前端知识匮乏，所以暂时未能解决：
 
-![1](images/2.png)
+![2](images/2.png)
+
+破案了：是浏览器解析的问题，使用edge加载页面时即会如上所示报错，而改用chrome即可。。
+
+![3](images/3.png)
